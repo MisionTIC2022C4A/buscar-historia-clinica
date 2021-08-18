@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework'
+    'rest_framework',
+    'historia_clinica'
 ]
 
 MIDDLEWARE = [
@@ -77,11 +78,11 @@ WSGI_APPLICATION = 'BUSCAR_HISTORIA_CLINICA.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'ec2-52-1-20-236.compute-1.amazonaws.com',
-        'NAME': 'd7vfhen9evfknc',
-        'USER': 'dzxscxqtuhpeeo',
+        'HOST': 'ec2-52-203-74-38.compute-1.amazonaws.com',
+        'NAME': 'd36mk6m3ud5a92',
+        'USER': 'kzdkxkyerxugwt',
         'PORT': '5432',
-        'PASSWORD': '2e5d827d41d13bd78343084ba197cb78a157be46bf1b1c856f62cf89deeb9a4a',
+        'PASSWORD': '27681696ba9dafaf4f984d6b909419e8def69a7a6d91d886cf9376232b2b8035',
     }
 }
 
@@ -108,9 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-co'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Bogota'
 
 USE_I18N = True
 
