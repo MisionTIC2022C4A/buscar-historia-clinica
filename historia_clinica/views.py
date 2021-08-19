@@ -58,19 +58,3 @@ def attentions_list(request):
         count = Attentions.objects.all().delete()
         return JsonResponse({'message': 'Todas las atenciones ({}) se borraron correctamente!'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
 
-
-'''
-class PatientView(View):
-	def get(self, request):
-		print(f'---------GET---------{request}---------------------------')
-		tipoId = request.GET['tipoId']
-		numId = request.GET['numId']
-		#patient = Patient.objects.get(pk=pk)
-		patient = Patient.objects.get(numero_identificacion=numId, tipo_identificacion=tipoId)
-		data = {}
-		data['nombre'] = patient.nombre_completo
-		data['id'] = patient.numero_identificacion
-		data['tipoId'] = patient.tipo_identificacion
-		
-		return JsonResponse(data)
-'''
