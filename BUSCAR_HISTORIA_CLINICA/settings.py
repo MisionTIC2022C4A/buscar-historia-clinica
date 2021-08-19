@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'BUSCAR_HISTORIA_CLINICA.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'ec2-52-203-74-38.compute-1.amazonaws.com',
-        'NAME': 'd36mk6m3ud5a92',
-        'USER': 'kzdkxkyerxugwt',
+        'HOST': 'ec2-44-195-201-3.compute-1.amazonaws.com',
+        'NAME': 'd99di39pfmaioe',
+        'USER': 'ikrjhinlymggte',
         'PORT': '5432',
-        'PASSWORD': '27681696ba9dafaf4f984d6b909419e8def69a7a6d91d886cf9376232b2b8035',
+        'PASSWORD': '5e8b5bb031ec78dfac6c883db4369c110056835e879dc88fe13c577389fd2bec',
     }
 }
 
