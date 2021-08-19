@@ -39,35 +39,3 @@ class Attentions(models.Model):
 
 	def __str__(self):
 		return str(self.idAtencion)
-
-
-
-
-"""
-class Patient(models.Model):
-    idPersona = models.AutoField(primary_key=True)
-    numero_identificacion = models.CharField(max_length=255)
-    tipo_identificacion = models.CharField(max_length=255)
-    aseguradora = models.CharField(max_length=255, blank=True, null=True)
-    ciudad = models.CharField(max_length=255, blank=True, null=True)
-    direccion = models.CharField(max_length=255, blank=True, null=True)
-    email = models.EmailField(max_length=255, blank=True, null=True)
-    estado_civil = models.CharField(max_length=255, blank=True, null=True)
-    fecha_ingreso = models.DateField(blank=True, null=True)
-    fecha_nacimiento = models.DateField(blank=True, null=True)
-    nombre_acompanante = models.CharField(max_length=255, blank=True, null=True)
-    nombre_completo = models.CharField(max_length=255, blank=True, null=True)
-    ocupacion = models.CharField(max_length=255, blank=True, null=True)
-    telefono = models.CharField(max_length=255, blank=True, null=True)
-    vinculacion = models.CharField(max_length=255, blank=True, null=True)
-
-    class Meta:
-        #managed = False
-        db_table = 'patient'
-        unique_together = (('numero_identificacion', 'tipo_identificacion'),)
-        verbose_name_plural = 'Pacientes'
-        verbose_name = 'Paciente'     
-    
-    def __str__(self):
-        return self.nombre_completo
-"""  
