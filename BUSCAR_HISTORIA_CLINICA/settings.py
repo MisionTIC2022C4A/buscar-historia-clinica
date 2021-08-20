@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-t()0y3ca_rssr!-pax&di*%2xp!)4ss!3n)@im=@+696#zeg&(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'historia-clinica-ms.herokuapp.com']
 
 
 # Application definition
@@ -42,10 +42,10 @@ INSTALLED_APPS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': [
-        # 'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
-    ],
+    # 'DEFAULT_RENDERER_CLASSES': [
+    #     # 'rest_framework.renderers.JSONRenderer',
+    #     'rest_framework.renderers.BrowsableAPIRenderer',
+    # ],
         'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ]

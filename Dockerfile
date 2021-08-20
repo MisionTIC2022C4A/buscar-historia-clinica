@@ -2,10 +2,10 @@ FROM python:3
 
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /users
-WORKDIR /users
+RUN mkdir /clinica
+WORKDIR /clinica
 
-ADD . /users/
+ADD . /clinica/
 
 RUN pip install -r requirements.txt
 

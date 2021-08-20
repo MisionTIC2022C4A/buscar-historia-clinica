@@ -9,6 +9,8 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from datetime import date, datetime
+from rest_framework.response import Response
+
 
 @api_view(['POST'])
 def attentions_create(request):
@@ -19,12 +21,12 @@ def attentions_create(request):
         if sts:
             attention_data['pacNombre'] = paciente['nombreCompleto']
         else:
-            return JsonResponse({'message': 'Paciente no existe'})
+            return Response({'message': 'Paciente no existe'})
         attention_serializer = AttentionSerializer(data=attention_data)
         if attention_serializer.is_valid():
             attention_serializer.save()
-            return JsonResponse(attention_serializer.data, status=status.HTTP_201_CREATED)
-        return JsonResponse(attention_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(attention_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(attention_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
@@ -34,7 +36,7 @@ def attentions_day(request, day=None):
             day = date.today()
         attentions = Attentions.objects.filter(fechaCreacion__date=day)
         attentions_serializer = AttentionSerializer(attentions, many=True)
-        return JsonResponse(attentions_serializer.data, safe=False)
+        return Response(attentions_serializer.data)
 
 
 @api_view(['GET'])
@@ -43,7 +45,7 @@ def attentions_pac(request, tipoId,  numId):
         attentions = Attentions.objects.filter(
             pacTipoId=tipoId, pacNumId=numId)
         attentions_serializer = AttentionSerializer(attentions, many=True)
-        return JsonResponse(attentions_serializer.data, safe=False)
+        return Response(attentions_serializer.data)
 
 
 @api_view(['GET', 'DELETE'])
@@ -51,9 +53,9 @@ def attentions_list(request):
     if request.method == 'GET':
         attentions = Attentions.objects.all()
         attentions_serializer = AttentionSerializer(attentions, many=True)
-        return JsonResponse(attentions_serializer.data, safe=False)
+        return Response(attentions_serializer.data)
 
     elif request.method == 'DELETE':
         count = Attentions.objects.all().delete()
-        return JsonResponse({'message': 'Todas las atenciones ({}) se borraron correctamente!'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
+        return Response({'message': 'Todas las atenciones ({}) se borraron correctamente!'.format(count[0])}, status=status.HTTP_204_NO_CONTENT)
 
