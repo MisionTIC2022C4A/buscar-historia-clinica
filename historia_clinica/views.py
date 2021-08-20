@@ -4,12 +4,11 @@ from django.views import View
 from .models import Attentions
 from .serializer import AttentionSerializer
 from django.http import JsonResponse
-from .patient_util import cons_pac, nuevo_paciente
+from .patient_util import cons_pac
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from datetime import date, datetime
-
 
 @api_view(['POST'])
 def attentions_create(request):

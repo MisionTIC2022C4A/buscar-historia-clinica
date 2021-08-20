@@ -38,4 +38,4 @@ class Attentions(models.Model):
 	fechaCreacion = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
-		return str(self.idAtencion)
+		return str(self.pk)
